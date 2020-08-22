@@ -3,6 +3,8 @@ const int LeftMotorForward = ;//the firist motor controller pin 1
 const int LeftMotorBackward =;//the firise motor controller pin 2
 const int RightMotorForward =;//the second motor controller pin 1
 const int RightMotorBackward =;//the second motor controller pin 1
+const int EnableA =;
+const int EnableB =;
 
 const int sensor_right = rightsensor;
 const int sensor_middle = middlesensor;
@@ -51,7 +53,10 @@ void setup()
   pinMode(LeftMotorForward, OUTPUT);
   pinMode(LeftMotorBackward, OUTPUT);
   pinMode(RightMotorBackward, OUTPUT);
-  
+  pinMode(EnableA,OUTPUT);
+  pinMode(EnableB,OUTPUT);
+  digitalWrite(EnableA,1);
+  digitalWrite(EnableA,0);
   delay(100);
 }
 void loop()
@@ -70,7 +75,7 @@ void loop()
   }
     if(right_state == 1 && left_state == 1 && middle_state == 0)
   {
-  mforward() 
+  mforward(); 
   }
   if(right_state == 1 && left_state == 1 && middle_state == 1)
   {
